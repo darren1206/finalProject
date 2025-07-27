@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wepet 寵物資訊平台</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container-fluid">
+            <!-- LOGO -->
+            <a class="navbar-brand" href="#">
+                <img src="pet-icon.png" width="36" height="36" class="d-inline-block align-top" alt="logo">
+                寵物資訊平台
+            </a>
+
+            <!-- 手機切換按鈕 -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- 導覽列連結 -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center w-100">
+
+                    <!-- 左側按鈕 -->
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link btn btn-login" href="#">尋找領養</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-login ml-lg-2" href="#">會員註冊</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-login ml-lg-2" href="#">會員登入</a></li>
+                    </ul>
+
+                    <!-- 中間選單 -->
+                    <ul class="navbar-nav mx-lg-auto text-center">
+                        <li class="nav-item"><a class="nav-link" href="#">關於我們</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">最新活動</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">領養須知</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">認養服務</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">寵物商城</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">收養回報</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- 輪播 Banner 區 -->
+    <header>
+        <div id="carouselWepet" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="banner1.jpg" class="d-block w-100" alt="廣告1">
+                </div>
+                <div class="carousel-item">
+                    <img src="banner2.jpg" class="d-block w-100" alt="廣告2">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselWepet" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control-next" href="#carouselWepet" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
+        </div>
+    </header>
+
+    <!-- 服務亮點區 -->
+    <section class="bg-light py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">我們提供什麼服務？</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <i class="fas fa-heart fa-2x mb-2 text-primary"></i>
+                    <h5>專業寵物媒合</h5>
+                    <p>快速媒合毛孩與適合的家庭，提升領養成功率。</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-map-marker-alt fa-2x mb-2 text-success"></i>
+                    <h5>即時救助地圖</h5>
+                    <p>結合定位功能，查找附近可收容的救援站。</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-shopping-cart fa-2x mb-2 text-warning"></i>
+                    <h5>物資商城支援</h5>
+                    <p>與商城結合，購買指定品項即等同捐助。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 最新消息區 -->
+    <section class="bg-white py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">最新公告與活動</h2>
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    2025 中部大型領養會即將展開！<span class="badge badge-info">NEW</span>
+                </li>
+                <li class="list-group-item">「認養即贈物資」活動熱烈進行中</li>
+                <li class="list-group-item">5月會員招募計畫開跑，歡迎加入志工行列！</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 領養須知 -->
+    <div class="container">
+        <div class="section-title"><i class="fas fa-paw"></i>領養須知</div>
+        <div class="text-block">
+            <p>text</p>
+        </div>
+    </div>
+
+    <!-- 關於我們 -->
+    <div class="container">
+        <div class="section-title"><i class="fas fa-paw"></i>關於我們</div>
+        <div class="text-block">
+            <p>text</p>
+        </div>
+    </div>
+
+    <!-- 功能卡片 -->
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="dog2.jpg" class="card-img-top" alt="認養服務">
+                    <div class="card-body">
+                        <h5 class="card-title">認養服務</h5>
+                        <p class="card-text">text</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="shop.jpg" class="card-img-top" alt="商城">
+                    <div class="card-body">
+                        <h5 class="card-title">商城</h5>
+                        <p class="card-text">text</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="report.jpg" class="card-img-top" alt="收養回報">
+                    <div class="card-body">
+                        <h5 class="card-title">收養回報</h5>
+                        <p class="card-text">text</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 右下角置頂按鈕 -->
+    <button id="backToTop" class="btn btn-primary shadow">↑</button>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p>快速連結：領養 / 商城 / 醫療回報 / 寵物救助</p>
+            <p>email: ispan@gmail.com</p>
+            <p>地址：台中市南屯區公益路二段51號</p>
+            <p>本站所有資訊來自開放平台與會員自行刊登，若有侵權請聯繫移除。</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const backToTopBtn = document.getElementById("backToTop");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+                backToTopBtn.style.display = "flex";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        });
+
+        backToTopBtn.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.navbar');
+
+        window.addEventListener("scroll", function () {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // 往下滑
+                navbar.classList.add("hide-navbar");
+            } else {
+                // 往上滑
+                navbar.classList.remove("hide-navbar");
+            }
+
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // 防止負值
+        }, false);
+    </script>
+
+</body>
+
+</html>
