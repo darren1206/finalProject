@@ -1,17 +1,17 @@
 const mission = {
-  title: "協助遛黃金獵犬",
+  title: "幫我遛狗",
   city: "台中市",
   district: "西屯區",
   startTime: "2025-08-02T15:00:00",
   endTime: "2025-08-02T17:00:00",
-  price: 300,
-  tag: "遛狗",
-  imageUrl: ["animal/original.png","animal/original.png","animal/original.png"],
-  description: "我家的狗狗很親人，請幫忙遛狗兩小時。",
-  petName: "小黃",
-  petAge: "0.5歲",
+  price: 1200,
+  tag: ["遛狗" , "短期照顧" ,"陪伴"],
+  imageUrl: ["animal/B00T5n75R7nIwItlHROYEbpvHHF3l840SR2XlMpx.jpeg","animal/B00T5n75R7nIwItlHROYEbpvHHF3l840SR2XlMpx.jpeg","animal/original.png"],
+  description: "阿肥很乖很可愛！！！",
+  petName: "阿肥",
+  petAge: "3.5歲",
   petGender: "公",
-  phone: "0912345678"
+  phone: "09001234566"
 };
 
 // 插入圖片輪播

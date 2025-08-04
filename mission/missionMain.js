@@ -109,42 +109,49 @@ document.getElementById("showRecommendBtn").addEventListener("click", () => {
 
 
 
+const missionList = document.getElementById('mission-list');
 const recommendList = document.getElementById("recommend-list");
 
-
+// 所有任務加入missions
 missions.forEach(mission => {
-if(parseInt(mission.score)>0 && parseInt(mission.score) < 50){
-    const card = document.createElement('div');
-    card.className = 'col-12 mb-4';
-    card.innerHTML = `
-      <div class="d-flex border  shadow-sm p-3 align-items-start">
-        <img src="${mission.imageUrl}" alt="任務圖片" style="width: 250px; height: 200px; object-fit: cover;" class="me-3">
+    const card = createMissionCard(mission);
+    missionList.appendChild(card);
 
-        <div class="flex-grow-1">
-          <h5 class="fw-bold mb-2">${mission.title}</h5>
-          ${mission.score}
-          <p class="mb-1 text-muted">地點：${mission.city}${mission.district}</p>
-          <p class="mb-1 text-muted">時間：${mission.startTime} ~ ${mission.endTime}</p>
-          <p class="mb-1 text-muted">酬勞：$${mission.price}</p>
-          
-          <div class="d-flex justify-content-between align-items-center mt-5">
-            <span class="mission-tag">#${mission.tag}</span>
-            <button class="btn btn-sm" style="background-color: burlywood;">查看詳情</button>
-          </div>
-        </div>
-      </div>
-    `;
-    document.getElementById('mission-list').appendChild(card);
-}else if(parseInt(mission.score)>51 && parseInt(mission.score) < 69){
+    // 大於70
+    if (parseInt(mission.score) >= 70) {
+        const recommendCard = createMissionCard(mission);
+        recommendList.appendChild(recommendCard);
+    }
+});
+
+function createMissionCard(mission) {
     const card = document.createElement('div');
     card.className = 'col-12 mb-4';
+
+    // 根據分數給不同樣式
+    const score = parseInt(mission.score);
+    let scoreColor = "text-muted";
+    let scoreLabel = "";
+
+    if (score >= 90) {
+        scoreColor = 'style="background-color:rgb(112, 190, 88); "'
+    } else if (score >= 70) {
+        scoreColor = 'style="background-color:rgb(218, 203, 107); "'
+    } else if (score >= 50) {
+        scoreColor = 'style="background-color:rgb(219, 120, 120); "'
+    } else {
+        scoreColor = 'style="background-color: #cfcfcf; "'
+    }
+
     card.innerHTML = `
       <div class="d-flex border shadow-sm p-3 align-items-start">
         <img src="${mission.imageUrl}" alt="任務圖片" style="width: 250px; height: 200px; object-fit: cover;" class="me-3">
 
         <div class="flex-grow-1">
-          <h5 class="fw-bold mb-2">${mission.title}</h5>
-            ${mission.score}
+          <div class = "d-flex justify-content-between align-items-center">
+            <h3 class="fw-bold mb-2">${mission.title}</h3>
+            <span class="score-circle" ${scoreColor}>${mission.score} </span>
+          </div>
           <p class="mb-1 text-muted">地點：${mission.city}${mission.district}</p>
           <p class="mb-1 text-muted">時間：${mission.startTime} ~ ${mission.endTime}</p>
           <p class="mb-1 text-muted">酬勞：$${mission.price}</p>
@@ -156,80 +163,5 @@ if(parseInt(mission.score)>0 && parseInt(mission.score) < 50){
         </div>
       </div>
     `;
-    document.getElementById('mission-list').appendChild(card);
-
-}else if(parseInt(mission.score)>70 && parseInt(mission.score) < 100){
-    const card = document.createElement('div');
-        card.className = 'col-12 mb-4';
-        card.innerHTML = `
-          <div class="d-flex border shadow-sm p-3 align-items-start">
-            <img src="${mission.imageUrl}" alt="任務圖片" style="width: 250px; height: 200px; object-fit: cover;" class="me-3">
-
-            <div class="flex-grow-1">
-              <h5 class="fw-bold mb-2">${mission.title}</h5>
-                 ${mission.score}
-              <p class="mb-1 text-muted">地點：${mission.city}${mission.district}</p>
-              <p class="mb-1 text-muted">時間：${mission.startTime} ~ ${mission.endTime}</p>
-              <p class="mb-1 text-muted">酬勞：$${mission.price}</p>
-
-              <div class="d-flex justify-content-between align-items-center mt-5">
-                <span class="mission-tag">#${mission.tag}</span>
-                <button class="btn btn-sm" style="background-color: burlywood;">查看詳情</button>
-              </div>
-            </div>
-          </div>
-        `;
-        recommendList.appendChild(card);
-        document.getElementById('mission-list').appendChild(card);
-
-};
-});
-
-
-
-// missions.forEach(mission => {
-//     if (parseInt(mission.score) > 70) {
-//         const card = document.createElement('div');
-//         card.className = 'col-12 mb-4';
-//         card.innerHTML = `
-//           <div class="d-flex border shadow-sm p-3 align-items-start">
-//             <img src="${mission.imageUrl}" alt="任務圖片" style="width: 250px; height: 200px; object-fit: cover;" class="me-3">
-
-//             <div class="flex-grow-1">
-//               <h5 class="fw-bold mb-2">${mission.title}</h5>
-//               <p class="mb-1 text-muted">地點：${mission.city}${mission.district}</p>
-//               <p class="mb-1 text-muted">時間：${mission.startTime} ~ ${mission.endTime}</p>
-//               <p class="mb-1 text-muted">酬勞：$${mission.price}</p>
-
-//               <div class="d-flex justify-content-between align-items-center mt-5">
-//                 <span class="mission-tag">#${mission.tag}</span>
-//                 <button class="btn btn-sm" style="background-color: burlywood;">查看詳情</button>
-//               </div>
-//             </div>
-//           </div>
-//         `;
-//         recommendList.appendChild(card);
-//     }
-// });
-// missions.forEach(mission => {
-//     const card = document.createElement('div');
-//     card.className = 'col-12 mb-4';
-//     card.innerHTML = `
-//       <div class="d-flex border  shadow-sm p-3 align-items-start">
-//         <img src="${mission.imageUrl}" alt="任務圖片" style="width: 250px; height: 200px; object-fit: cover;" class="me-3">
-
-//         <div class="flex-grow-1">
-//           <h5 class="fw-bold mb-2">${mission.title}</h5>
-//           <p class="mb-1 text-muted">地點：${mission.city}${mission.district}</p>
-//           <p class="mb-1 text-muted">時間：${mission.startTime} ~ ${mission.endTime}</p>
-//           <p class="mb-1 text-muted">酬勞：$${mission.price}</p>
-          
-//           <div class="d-flex justify-content-between align-items-center mt-5">
-//             <span class="mission-tag">#${mission.tag}</span>
-//             <button class="btn btn-sm" style="background-color: burlywood;">查看詳情</button>
-//           </div>
-//         </div>
-//       </div>
-//     `;
-//     document.getElementById('mission-list').appendChild(card);
-// });
+    return card;
+}

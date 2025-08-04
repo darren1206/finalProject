@@ -34,22 +34,24 @@
 
                     <!-- 左側按鈕 -->
                     <ul class="navbar-nav mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link btn btn-login" href="#">尋找領養</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-login ml-lg-2" href="#">會員註冊</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-login ml-lg-2" href="#">會員登入</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-login m-1" href="#">尋找領養</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-login m-1" href="missonMain.html">尋找任務</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-login m-1" href="#">寵物商城</a></li>
                     </ul>
 
-                    <!-- 中間選單 -->
-                    <ul class="navbar-nav mx-lg-auto text-center">
-                        <li class="nav-item"><a class="nav-link" href="#">關於我們</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">任務平台</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">領養須知</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">認養服務</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">寵物商城</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">收養回報</a></li>
-                    </ul>
+                    <!-- 右側按鈕 -->
+                    <div class=" position-fixed end-0 m-4 ">
+                        <button id="chat-toggle" class="btn btn-material">
+                            <span class="material-icons">chat_bubble_outline</span>
+                        </button>
+                        <button class="btn btn-material">
+                            <span class="material-icons">shopping_cart</span>
+                        </button>
+                        <button class="btn btn-material">
+                            <span class="material-icons">account_circle</span>
+                        </button>
 
-
+                    </div>
                 </div>
             </div>
         </div>
@@ -77,16 +79,19 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label for="petName" class="form-label">寵物姓名</label>
-                                    <input type="text" class="form-control" id="petName" required>
+                                    <label for="petname" class="form-label">🐾姓名</label>
+                                    <input type="text" class="form-control" id="petname" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <label for="petAge" class="form-label">寵物年紀</label>
-                                    <input type="text" class="form-control" id="petAge">
+                                    <label for="petage" class="form-label">🐾年紀</label>
+                                    <input type="text" class="form-control" id="petage">
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <label for="petGender" class="form-label">寵物性別</label>
-                                    <input type="text" class="form-control" id="petGender">
+                                    <label for="petgender" class="form-label">🐾性別</label>
+                                    <select class="form-select" id="petgender" required>
+                                        <option value="公">公</option>
+                                        <option value="母">母</option>
+                                    </select>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="phone" class="form-label">聯絡人電話</label>
@@ -107,11 +112,11 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="time" class="form-label">開始時間</label>
-                                    <input type="datetime-local" class="form-control" id="startTime" required>
+                                    <input type="datetime-local" class="form-control" id="starttime" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="time" class="form-label">結束時間</label>
-                                    <input type="datetime-local" class="form-control" id="endTime" required>
+                                    <input type="datetime-local" class="form-control" id="endtime" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="price" class="form-label">酬勞（元）</label>
@@ -119,18 +124,35 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="tag" class="form-label">任務標籤</label>
-                                <select class="form-select" id="tag" required>
-                                    <option value="">請選擇任務標籤</option>
-                                    <option value="長期照顧">#長期照顧</option>
-                                    <option value="短期照顧">#短期照顧</option>
-                                    <option value="遛狗">#遛狗</option>
-                                    <option value="餵食">#餵食</option>
-                                    <option value="洗澡">#洗澡</option>
-                                    <option value="陪伴">#陪伴</option>
-                                    <option value="其他">#其他</option>
-                                </select>
+                                <label class="form-label">任務標籤（可複選）</label>
+                                <div id="tag-buttons" class="d-flex flex-wrap gap-2">
+                                    <button type="button" class="btn btn-outline-secondary tag-btn"
+                                        data-value="長期照顧">#長期照顧</button>
+                                    <button type="button" class="btn btn-outline-secondary tag-btn"
+                                        data-value="短期照顧">#短期照顧</button>
+                                    <button type="button" class="btn btn-outline-secondary tag-btn"
+                                        data-value="遛狗">#遛狗</button>
+                                    <button type="button" class="btn btn-outline-secondary tag-btn"
+                                        data-value="餵食">#餵食</button>
+                                    <button type="button" class="btn btn-outline-secondary tag-btn"
+                                        data-value="洗澡">#洗澡</button>
+                                    <button type="button" class="btn btn-outline-secondary tag-btn"
+                                        data-value="陪伴">#陪伴</button>
+                                    <button type="button" class="btn btn-outline-secondary tag-btn"
+                                        data-value="醫療">#醫療</button>
+                                    <button type="button" class="btn btn-outline-secondary tag-btn"
+                                        data-value="清潔環境">#清潔環境</button>
+                                    <button type="button" class="btn btn-outline-secondary tag-btn"
+                                        data-value="無經驗可">#無經驗可</button>
+                                    <button type="button" class="btn btn-outline-secondary tag-btn"
+                                        data-value="接送服務">#接送服務</button>
+                                    <button type="button" class="btn btn-outline-secondary tag-btn"
+                                        data-value="其他">#其他</button>
+                                </div>
                             </div>
+                            <!-- 送出資料 -->
+                            <input type="hidden" name="tags" id="selectedTags">
+
                             <div class="mb-3">
                                 <label for="description" class="form-label">任務說明</label>
                                 <textarea class="form-control" id="description" rows="3" required></textarea>

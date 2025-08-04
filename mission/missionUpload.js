@@ -1,4 +1,4 @@
-const fields = ['title', 'description', 'city', 'district', 'starttime','endtime', 'price', 'tag', 'imageUrl', 'petname', 'petage', 'petgender', 'phone'];
+const fields = ['title', 'description', 'city', 'district', 'starttime','endtime', 'price', 'imageUrl', 'petname', 'petage', 'petgender', 'phone'];
 
 fields.forEach(id => {
     document.getElementById(id).addEventListener('input', updatePreview);
@@ -26,7 +26,7 @@ function updatePreview() {
     document.getElementById('previewEndTime').textContent = formattedEndTime;
 
     document.getElementById('previewPrice').textContent = document.getElementById('price').value;
-    document.getElementById('previewTag').textContent = document.getElementById('tag').value;
+    document.getElementById('previewTag').textContent = document.getElementById('selectedTags').value;
     document.getElementById('previewDescription').textContent = document.getElementById('description').value;
 }
 
@@ -92,3 +92,28 @@ document.getElementById('imageUrl').addEventListener('change', function (event) 
         reader.readAsDataURL(file);
     });
 }
+
+// tag
+const selectedTags = new Set();
+const tagButtons = document.querySelectorAll('.tag-btn');
+const hiddenTagInput = document.getElementById('selectedTags');
+
+tagButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const value = button.dataset.value;
+
+    if (selectedTags.has(value)) {
+      selectedTags.delete(value);
+      button.classList.remove('btn-secondary');
+      button.classList.add('btn-outline-secondary');
+    } else {
+      selectedTags.add(value);
+      button.classList.remove('btn-outline-secondary');
+      button.classList.add('btn-secondary');
+    }
+
+    // 更新隱藏欄位內容並刷新預覽
+    hiddenTagInput.value = Array.from(selectedTags).join(' #');
+    updatePreview();
+  });
+});
