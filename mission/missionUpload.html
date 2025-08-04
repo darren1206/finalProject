@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wepet 寵物資訊平台</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chatroom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container-fluid">
+            <!-- LOGO -->
+            <a class="navbar-brand" href="#">
+                <img src="../pet-icon.png" width="36" height="36" class="d-inline-block align-top" alt="logo">
+                寵物資訊平台
+            </a>
+
+            <!-- 手機切換按鈕 -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- 導覽列連結 -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center w-100">
+
+                    <!-- 左側按鈕 -->
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link btn btn-login" href="#">尋找領養</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-login ml-lg-2" href="#">會員註冊</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-login ml-lg-2" href="#">會員登入</a></li>
+                    </ul>
+
+                    <!-- 中間選單 -->
+                    <ul class="navbar-nav mx-lg-auto text-center">
+                        <li class="nav-item"><a class="nav-link" href="#">關於我們</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">任務平台</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">領養須知</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">認養服務</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">寵物商城</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">收養回報</a></li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row justify-content-center align-items-start">
+            <!-- 任務上傳表單 -->
+            <div class="my-5 col-lg-6 col-12">
+                <h2 class="mb-4 ">上傳任務</h2>
+                <form id="taskForm">
+                    <!-- 訊息 -->
+                    <div class="card mb-4">
+                        <div class="card-header">訊息</div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="title" class="form-label">任務標題</label>
+                                <input type="text" class="form-control" id="title" placeholder="幫我遛狗" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="imageUrl" class="form-label">照片</label>
+                                <input type="file" class="form-control" id="imageUrl" multiple accept="image/*">
+                                <small class="text-muted">最多上傳 5 張圖片</small>
+                                <div id="previewImages" class="d-flex flex-wrap gap-2 mt-2"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="petName" class="form-label">寵物姓名</label>
+                                    <input type="text" class="form-control" id="petName" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="petAge" class="form-label">寵物年紀</label>
+                                    <input type="text" class="form-control" id="petAge">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="petGender" class="form-label">寵物性別</label>
+                                    <input type="text" class="form-control" id="petGender">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">聯絡人電話</label>
+                                    <input type="text" class="form-control" id="phone" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="city" class="form-label">城市</label>
+                                    <input type="text" class="form-control" id="city" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="district" class="form-label">地區</label>
+                                    <input type="text" class="form-control" id="district" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="time" class="form-label">開始時間</label>
+                                    <input type="datetime-local" class="form-control" id="startTime" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="time" class="form-label">結束時間</label>
+                                    <input type="datetime-local" class="form-control" id="endTime" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="price" class="form-label">酬勞（元）</label>
+                                    <input type="number" class="form-control" id="price" min="0" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="tag" class="form-label">任務標籤</label>
+                                <select class="form-select" id="tag" required>
+                                    <option value="">請選擇任務標籤</option>
+                                    <option value="長期照顧">#長期照顧</option>
+                                    <option value="短期照顧">#短期照顧</option>
+                                    <option value="遛狗">#遛狗</option>
+                                    <option value="餵食">#餵食</option>
+                                    <option value="洗澡">#洗澡</option>
+                                    <option value="陪伴">#陪伴</option>
+                                    <option value="其他">#其他</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="description" class="form-label">任務說明</label>
+                                <textarea class="form-control" id="description" rows="3" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <button type="submit" class="btn" style="background-color: burlywood;">提交任務</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- 預覽區塊 -->
+            <div id="taskPreview" class="my-5 col-lg-6 col-12">
+                <h2 class="mb-4">任務預覽</h2>
+                <div class="card">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <div id="previewCarousel" class="carousel slide h-100" data-bs-ride="carousel">
+                                <div class="carousel-inner h-100" id="carouselImages"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <h5 id="previewTitle" class="card-title"></h5>
+                                <p class="mb-1"><strong>姓名：</strong><span id="previewPetName"></span></p>
+                                <p class="mb-1"><strong>年紀：</strong><span id="previewPetAge"></span></p>
+                                <p class="mb-1"><strong>性別：</strong><span id="previewPetGender"></span></p>
+                                <p class="mb-1"><strong>緊急聯絡人電話：</strong><span id="previewPhone"></span></p>
+                                <p class="mb-1"><strong>地點：</strong><span id="previewLocation"></span></p>
+                                <p class="mb-1"><strong>時間：</strong><span id="previewStartTime"></span> ~ </strong><span
+                                        id="previewEndTime"></span></p>
+                                <p class="mb-1"><strong>酬勞：</strong><span id="previewPrice"></span> 元</p>
+                                <p class="card-text"><strong>任務詳情：</strong><span id="previewDescription"></span></p>
+                                <p><span class="mission-tag" id="previewTag"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer text-center mt-5">
+        <div class="container">
+            <p>快速連結：領養 / 商城 / 醫療回報 / 寵物救助</p>
+            <p>email: ispan@gmail.com</p>
+            <p>地址：台中市南屯區公益路二段51號</p>
+            <p>本站所有資訊來自開放平台與會員自行刊登，若有侵權請聯繫移除。</p>
+        </div>
+    </footer>
+
+    <script src="missionUpload.js"></script>
+</body>
+
+</html>

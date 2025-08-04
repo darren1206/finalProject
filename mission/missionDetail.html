@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wepet 寵物資訊平台</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chatroom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container-fluid">
+            <!-- LOGO -->
+            <a class="navbar-brand" href="#">
+                <img src="../pet-icon.png" width="36" height="36" class="d-inline-block align-top" alt="logo">
+                寵物資訊平台
+            </a>
+
+            <!-- 手機切換按鈕 -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- 導覽列連結 -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center w-100">
+
+                    <!-- 左側按鈕 -->
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link btn btn-login" href="#">尋找領養</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-login ml-lg-2" href="#">會員註冊</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-login ml-lg-2" href="#">會員登入</a></li>
+                    </ul>
+
+                    <!-- 中間選單 -->
+                    <ul class="navbar-nav mx-lg-auto text-center">
+                        <li class="nav-item"><a class="nav-link" href="#">關於我們</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">任務平台</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">領養須知</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">認養服務</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">寵物商城</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">收養回報</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center align-items-start" id="mission-detail">
+            <div class="col-md-6">
+                <div id="mission-carousel" class="carousel slide h-100" data-bs-ride="carousel">
+                    <div class="carousel-inner h-100" id="carouselImages">
+                        <!-- 圖片 -->
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#mission-carousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#mission-carousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6 ">
+                <div class="card-body">
+                    <h1 class="card-title mb-3" id="title"></h1>
+                    <p><strong>姓名：</strong><span id="petName"></span></p>
+                    <p><strong>年紀：</strong><span id="petAge"></span></p>
+                    <p><strong>性別：</strong><span id="petGender"></span></p>
+                    <p><strong>電話：</strong><span id="phone"></span></p>
+                    <p><strong>地點：</strong><span id="location"></span></p>
+                    <p><strong>時間：</strong><span id="time"></span></p>
+                    <p><strong>酬勞：</strong><span id="price"></span> 元</p>
+                    <p><strong>任務詳情：</strong><span id="description"></span></p>
+                    <p><span class="mission-tag" id="tag"></span></p>
+                    <button class="btn position-absolute"
+                        style="top: 750px; right: 150px; background-color: burlywood;">
+                        <span class="material-icons">
+                            insert_comment
+                        </span> 請求接取任務
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- 右下角置頂按鈕 -->
+    <button id="backToTop" class="btn btn-primary shadow">↑</button>
+
+    <!-- Footer -->
+    <footer class="footer text-center mt-5">
+        <div class="container">
+            <p>快速連結：領養 / 商城 / 醫療回報 / 寵物救助</p>
+            <p>email: ispan@gmail.com</p>
+            <p>地址：台中市南屯區公益路二段51號</p>
+            <p>本站所有資訊來自開放平台與會員自行刊登，若有侵權請聯繫移除。</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="missionDetail.js"></script>
+    <script src="chat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

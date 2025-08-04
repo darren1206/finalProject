@@ -1,0 +1,73 @@
+
+/* 聊天對象選單與聊天視窗共用外框 */
+.chat-window {
+    position: fixed;
+    background: white;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    z-index: 1050;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 右上角聊天選單位置 */
+#chat-selector {
+    top: 25px;
+    right: 30px;
+    width: 300px;
+    z-index: 1050;
+    display: none;
+}
+
+/* 右下角聊天輸入視窗位置 */
+#chat-window {
+    bottom: 0px;
+    right: 90px;
+    width: 320px;
+    display: none;
+}
+
+/* 視窗標題區 */
+.chat-header {
+    background-color: rgb(255, 255, 255);
+    border-radius: 6px;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0;
+    border-bottom-style:inset;
+    width: 100%;
+    height: 50px;
+}
+
+
+/* 訊息列表 */
+.chat-body {
+    height: 300px;
+    overflow-y: auto;
+    font-size: 14px;
+}
+
+/* 訊息泡泡樣式 */
+.chat-body div {
+    max-width: 80%;
+    padding: 6px 12px;
+    border-radius: 3px;
+    word-break: break-word;
+}
+
+.chat-body .text-end {
+    margin-left: auto;
+}
+
+
+/* 下方輸入區 */
+.chat-input {
+    width: 80%; 
+    height: 40px; 
+    border-radius: 30px;
+    border-style: none;
+    background-color: #e7e7e7;
+}
+
+.chat-footer{
+    height: 50px;
+}
+

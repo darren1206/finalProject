@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wepet 寵物資訊平台</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chatroom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container-fluid">
+            <!-- LOGO -->
+            <a class="navbar-brand" href="#">
+                <img src="../pet-icon.png" width="36" height="36" class="d-inline-block align-top" alt="logo">
+                寵物資訊平台
+            </a>
+
+            <!-- 手機切換按鈕 -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- 導覽列連結 -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center w-100">
+
+                    <!-- 左側按鈕 -->
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link btn btn-login" href="#">尋找領養</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-login ml-lg-2" href="#">會員註冊</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-login ml-lg-2" href="#">會員登入</a></li>
+                    </ul>
+
+                    <!-- 中間選單 -->
+                    <ul class="navbar-nav mx-lg-auto text-center">
+                        <li class="nav-item"><a class="nav-link" href="#">關於我們</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">任務平台</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">領養須知</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">認養服務</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">寵物商城</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">收養回報</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center align-items-start">
+            <!-- 媒合列表 -->
+            <div class="col-md-3">
+                <ul class="list-group" id="matchList">
+                    <a href="#" class="list-group-item " aria-current="true">
+                        <strong>最新消息</strong>
+                    </a>
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center" id="chatName">聊天室</div>
+                    <div class="card-body" id="chatMessages" style="height: 300px; overflow-y: auto; background-color: rgb(248, 248, 248);">
+                        <p>尚未選擇聯絡人</p>
+                    </div>
+                    <div class="card-footer">
+                        <input class="form" style="width: 88%; height: 40px;" placeholder="輸入訊息" type="text">
+                        <button class="btn" style=" background-color: burlywood;">送出</button>
+                    </div>
+                </div>
+
+                <div class="card mt-3">
+                    <div class="card-header">申請人資訊</div>
+                    <div class="card-body" style="background-color: rgb(248, 248, 248);">
+                        <p>尚未選擇聯絡人</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 聊天對象選單（右上角） -->
+    <div id="chat-selector" class="chat-window shadow">
+        <div class="chat-header d-flex justify-content-between align-items-center px-3 py-2">
+            <strong>悄悄話</strong>
+            <button class="btn btn-sm" onclick="toggleChatSelector()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-body p-3" id="user-list">
+            <p class="text-center text-muted">尚未開始對話</p>
+        </div>
+    </div>
+
+
+
+    <!-- 右下角置頂按鈕 -->
+    <button id="backToTop" class="btn btn-primary shadow">↑</button>
+
+    <!-- Footer -->
+    <footer class="footer text-center mt-5">
+        <div class="container">
+            <p>快速連結：領養 / 商城 / 醫療回報 / 寵物救助</p>
+            <p>email: ispan@gmail.com</p>
+            <p>地址：台中市南屯區公益路二段51號</p>
+            <p>本站所有資訊來自開放平台與會員自行刊登，若有侵權請聯繫移除。</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="missionMain.js"></script>
+    <script src="missionMatch.js"></script>
+    <script src="chat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

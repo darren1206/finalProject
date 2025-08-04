@@ -1,0 +1,266 @@
+body {
+    font-family: "Noto Sans TC", sans-serif;
+    background-color: #f9f9f9;
+    padding-top: 60px;
+}
+
+header .carousel-item img {
+    height: 500px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.navbar-light {
+    background-color: #f8f2e9 !important;
+    /* 柔和米色 */
+}
+
+.navbar-light .navbar-brand {
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: #4e4e4e;
+}
+
+.navbar-light .nav-link {
+    color: #4e4e4e;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-light .nav-link:hover {
+    color: #c48b5f;
+}
+
+.navbar-nav .btn {
+    background-color: #d19f72;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    padding: 6px 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-nav .btn:hover {
+    background-color: #b9845e;
+}
+
+.site-title {
+    font-size: 1.5rem;
+    color: #444;
+}
+
+section {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 2rem 0 1rem;
+}
+
+.section-title i {
+    margin-right: 8px;
+}
+
+.text-block {
+    max-width: 900px;
+    margin: auto;
+    padding: 0 1rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.footer {
+    background-color: #f8f2e9;
+    color: #333;
+    padding: 2rem 1rem;
+}
+
+.footer p {
+    margin-bottom: 0.2rem;
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* 右下角置頂按鈕 */
+#backToTop {
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #d19f72;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#backToTop:hover {
+    background-color: #b9845e;
+}
+
+/* 控制顯示與隱藏的動畫 */
+/* .navbar {
+    transition: top 0.3s;
+} */
+
+/* 隱藏狀態：往下滑時觸發 */
+/* .navbar.hide-navbar {
+    top: -80px;
+} */
+
+.btn-login {
+    background-color: #d19f72;
+    border-radius: 30px;
+    padding: 6px 16px;
+    font-weight: bold;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #b9845e;
+}
+
+/* 手機版導覽列改為直式 */
+@media (max-width: 991.98px) {
+    .navbar-collapse>.d-flex {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .navbar-nav {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+
+    .navbar-nav .nav-link {
+        text-align: center;
+    }
+
+    .btn-login {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .navbar .navbar-nav:first-child {
+        margin-right: auto;
+    }
+
+    .navbar .navbar-nav:last-child {
+        margin-left: auto;
+    }
+}
+
+.mission-card {
+    border-radius: 3px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.mission-card:hover {
+    transform: translateY(-5px);
+}
+
+.mission-tag {
+    font-size: 0.8rem;
+    color: #5b7f6e;
+    background-color: #e6f1ec;
+    padding: 0.3rem 0.6rem;
+    border-radius: 999px;
+}
+
+.card-header{
+    background-color: burlywood;
+}
+
+.list-group-item {
+    border-radius: 0px;
+    box-shadow: #d19f72;
+}
+.list-group-item.active{
+    background-color: burlywood;
+    color: #333;
+}
+.list-group{
+    border-radius: 1px;
+    
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 40px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  vertical-align: middle;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.btn-material{
+    border: none;
+    transition: 0.3s;
+}
+.btn-material :hover{
+    background-color: burlywood;
+    border-radius: 50%;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-recommend{
+    transition: 0.3s;
+    border-radius: 3px;
+    border-bottom-right-radius:0px ;
+    border-bottom-left-radius:0px ;
+    margin-bottom: 0;
+}
+
+.btn-recommend.active{
+    background-color: burlywood;
+    transition: 0.3s;
+    border: none;
+}
+
+.btn-recommend:hover{
+    background-color: burlywood;
+    transition: 0.3s;
+}
