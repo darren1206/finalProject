@@ -36,8 +36,8 @@ myApplications.forEach(app => {
 
   if (app.userRole === "applicant") {
     buttons = `
-      <button class="btn btn-sm text-white" style="background-color: burlywood;">查看詳情</button>
-      <button class="btn btn-secondary btn-sm"> 聯絡送養人</button>
+      <button class="btn btn-sm" style="background-color: burlywood;">查看詳情</button>
+      <button class="btn btnsecondary btn-sm"> 聯絡送養人</button>
       <button class="btn btn-sm text-white"  style="background-color: rgb(219, 120, 120);">取消申請</button>
     `;
   } else if (app.userRole === "owner") {
