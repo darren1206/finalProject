@@ -25,6 +25,7 @@ carousel.innerHTML = mission.imageUrl.map(function(url, idx) {
 }).join('');
 
 // 插入文字資訊
+document.getElementById('PetPick-title').textContent = mission.title;
 document.getElementById('title').textContent = mission.title;
 document.getElementById('petName').textContent = mission.petName;
 document.getElementById('petAge').textContent = mission.petAge;

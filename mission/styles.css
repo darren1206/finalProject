@@ -276,3 +276,6 @@ section {
   justify-content: center;
   color: #fff;
 }
+#search-input{
+    height: 36px;
+}

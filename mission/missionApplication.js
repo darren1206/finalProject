@@ -36,13 +36,10 @@ myApplications.forEach(app => {
 
   if (app.userRole === "applicant") {
     buttons = `
-      <button class="btn btn-sm" style="background-color: burlywood;">查看詳情</button>
-      <button class="btn btnsecondary btn-sm"> 聯絡送養人</button>
       <button class="btn btn-sm text-white"  style="background-color: rgb(219, 120, 120);">取消申請</button>
     `;
   } else if (app.userRole === "owner") {
     buttons = `
-      <button class="btn btn-sm text-white" style="background-color: burlywood;">查看申請者</button>
       <button class="btn btn-sm text-white" style="background-color: rgb(112, 190, 88); ">接受</button>
       <button class="btn btn-sm text-white" style="background-color: rgb(219, 120, 120);">拒絕</button>
     `;
@@ -50,12 +47,15 @@ myApplications.forEach(app => {
 
   card.innerHTML = `
     <div class="card-body">
+     <div class="d-flex justify-content-between">
       <h5 class="card-title">🐾 ${app.missionTitle}</h5>
-      <p class="card-text">
-        申請時間：${app.applyTime}<br>
-        狀態：<span class="badge ${badge}">${app.status}</span><br>
-        ${app.userRole === 'applicant' ? `對方：${app.owner}` : `申請者：${app.applicant}`}
-      </p>
+      <button class="btn btn-material"><span class="btn-material material-icons">article</span></button>
+     </div>
+        <p class="card-text">
+          申請時間：${app.applyTime}<br>
+          狀態：<span class="badge ${badge}">${app.status}</span><br>
+          ${app.userRole === 'applicant' ? `對方：${app.owner}` : `申請者：${app.applicant}`}
+        </p>
       <div class="d-flex justify-content-end gap-2">${buttons}</div>
     </div>
   `;

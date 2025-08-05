@@ -158,7 +158,7 @@ function createMissionCard(mission) {
           
           <div class="d-flex justify-content-between align-items-center mt-5">
             <span class="mission-tag">#${mission.tag}</span>
-            <button class="btn btn-sm" style="background-color: burlywood;">查看詳情</button>
+            <button class="btn btn-md" style="background-color: burlywood;">我要接任務</button>
           </div>
         </div>
       </div>

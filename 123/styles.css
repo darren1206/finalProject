@@ -126,6 +126,7 @@ section {
 /* 隱藏狀態：往下滑時觸發 */
 .navbar.hide-navbar {
     top: -80px;
+    /* 根據 navbar 高度調整 */
 }
 
 .btn-login {
@@ -172,110 +173,4 @@ section {
     .navbar .navbar-nav:last-child {
         margin-left: auto;
     }
-}
-
-.mission-card {
-    border-radius: 3px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s;
-}
-
-.mission-card:hover {
-    transform: translateY(-5px);
-}
-
-.mission-tag {
-    font-size: 0.8rem;
-    color: #5b7f6e;
-    background-color: #e6f1ec;
-    padding: 0.3rem 0.6rem;
-    border-radius: 999px;
-}
-
-.card-header{
-    background-color: burlywood;
-}
-
-.list-group-item {
-    border-radius: 0px;
-    box-shadow: #d19f72;
-}
-.list-group-item.active{
-    background-color: burlywood;
-    color: #333;
-}
-.list-group{
-    border-radius: 1px;
-    
-}
-
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 40px;  /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  vertical-align: middle;
-
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Support for IE. */
-  font-feature-settings: 'liga';
-}
-
-.btn-material{
-    border: none;
-    transition: 0.3s;
-}
-.btn-material :hover{
-    background-color: burlywood;
-    border-radius: 50%;
-    border: none;
-    transition: 0.3s;
-}
-
-.btn-recommend{
-    transition: 0.3s;
-    border-radius: 3px;
-    border-bottom-right-radius:0px ;
-    border-bottom-left-radius:0px ;
-    margin-bottom: 0;
-}
-
-.btn-recommend.active{
-    background-color: burlywood;
-    transition: 0.3s;
-    border: none;
-}
-
-.btn-recommend:hover{
-    background-color: burlywood;
-    transition: 0.3s;
-}
-.score-circle {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  font-weight: bold;
-  font-size: 16px;
-  background-color: #9fad44;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-}
-#search-input{
-    height: 36px;
 }

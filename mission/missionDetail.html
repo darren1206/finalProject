@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wepet 寵物資訊平台</title>
+    <title id="PetPick-title">PetPick</title>
+    <link rel="icon" href="/pet-icon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="chatroom.css">
@@ -18,9 +19,9 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
         <div class="container-fluid">
             <!-- LOGO -->
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/index.html">
                 <img src="../pet-icon.png" width="36" height="36" class="d-inline-block align-top" alt="logo">
-                寵物資訊平台
+                PetPick
             </a>
 
             <!-- 手機切換按鈕 -->
@@ -57,7 +58,7 @@
         </div>
     </nav>
 
-    <div class="container mt-5">
+    <div class="container w-75 mt-5">
         <div class="row justify-content-center align-items-start" id="mission-detail">
             <div class="col-md-6">
                 <div id="mission-carousel" class="carousel slide h-100" data-bs-ride="carousel">
@@ -74,7 +75,7 @@
                     </button>
                 </div>
             </div>
-            <div class="col-md-6 ">
+            <div class="col-md-4 ">
                 <div class="card-body">
                     <h1 class="card-title mb-3" id="title"></h1>
                     <p><strong>姓名：</strong><span id="petName"></span></p>
@@ -86,13 +87,20 @@
                     <p><strong>酬勞：</strong><span id="price"></span> 元</p>
                     <p><strong>任務詳情：</strong><span id="description"></span></p>
                     <p><span class="mission-tag" id="tag"></span></p>
-                    <button class="btn position-absolute"
-                        style="top: 750px; right: 150px; background-color: burlywood;">
-                        <span class="material-icons">
-                            insert_comment
-                        </span> 請求接取任務
-                    </button>
                 </div>
+            </div>
+            <div class="col-md-2">
+                <button class="btn">
+                    <span class="material-icons">ios_share</span>
+                </button>
+                <button class="btn">
+                    <span class="material-icons">favorite_border</span>
+                </button>
+            </div>
+            <div class="col-12 d-flex justify-content-end mt-3">
+                <button class="btn" style="background-color: burlywood;">
+                    <span class="material-icons">insert_comment</span> 請求接取任務
+                </button>
             </div>
         </div>
     </div>
