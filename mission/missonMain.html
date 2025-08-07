@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetPick 任務專區</title>
-    <link rel="icon" href="/pet-icon.png" type="image/x-icon">
+    <link rel="icon" href="../pet-icon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="chatroom.css">
@@ -14,32 +14,26 @@
 </head>
 
 <body>
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
         <div class="container-fluid">
-            <!-- LOGO -->
             <a class="navbar-brand" href="/index.html">
                 <img src="../pet-icon.png" width="36" height="36" class="d-inline-block align-top" alt="logo">
                 PetPick
             </a>
 
-            <!-- 手機切換按鈕 -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- 導覽列連結 -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center w-100">
 
-                    <!-- 左側按鈕 -->
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link btn btn-login m-1" href="#">尋找領養</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-login m-1" href="missonMain.html">尋找任務</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-login m-1" href="#">寵物商城</a></li>
                     </ul>
 
-                    <!-- 右側按鈕 -->
                     <div class=" position-fixed end-0 m-4 ">
                         <button id="chat-toggle" class="btn btn-material">
                             <span class="material-icons">chat_bubble_outline</span>
@@ -58,7 +52,6 @@
     </nav>
 
 
-    <!-- 輪播 Banner 區 -->
     <header>
         <div id="carouselWepet" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -78,7 +71,6 @@
 
     <div class="container py-5">
         <h3 class="text-center fw-bold mb-4">查看任務專區 🐾</h3>
-        <!-- 篩選區     還未加js-->
         <div class="row mb-4">
             <div class="col-md-2 mb-2">
                 <select class="form-select">
@@ -109,12 +101,12 @@
             <div class="col-md-3 mb-2">
                 <label for="search-input" class="search-bar">
                     <form action="">
-                        <input type="search" id="search-input" placeholder="搜尋任務" >
-                        <input type="submit" value="search" class="btn  material-icons" style="background-color: burlywood; ">
+                        <input type="search" id="search-input" placeholder="搜尋任務">
+                        <input type="submit" value="search" class="btn  material-icons"
+                            style="background-color: burlywood; ">
                     </form>
                 </label>
             </div>
-            <!-- 發佈任務按鈕 -->
             <div class="col-md-3 mb-2">
                 <a href="missionUpload.html" class="text-black text-decoration-none">
                     <button class="btn w-100" style="background-color: burlywood; ">
@@ -124,39 +116,68 @@
         </div>
 
 
-        <!-- 任務列表 -->
         <div class="container">
             <button id="showAllBtn" class="btn active btn-recommend">全部任務</button>
             <button id="showRecommendBtn" class="btn btn-recommend">
                 <span class="material-icons">
                     local_fire_department
                 </span>智慧推薦</button>
-            <div id="all-missions">
-                <div class="row" id="mission-list">
-                    <!-- 任務加到這裡 -->
+            <div class="row">
+                <div class="col-md-8">
+                    <div id="all-missions">
+                        <div class="row" id="mission-list">
+                        </div>
+                    </div>
+                    <div id="recommend-list" class="row" style="display: none;">
+                    </div>
                 </div>
-            </div>
-            <div id="recommend-list" class="row" style="display: none;">
-                <!-- 智慧推薦任務清單 -->
+
+                <div class="col-md-4">
+                    <div class="card p-4 mb-4 shadow-sm" style="border-radius: 15px;">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="mb-0 text-danger fw-bold"><i class="fa-solid fa-triangle-exclamation"></i>
+                                PetPick的防詐騙五大提醒</h5>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li class="d-flex align-items-start mb-2">
+                                <i class="fa-solid fa-circle-xmark text-danger me-2 mt-1"></i>
+                                <span>保持警覺，小心「保證獲利」的誘惑</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-2">
+                                <i class="fa-solid fa-circle-xmark text-danger me-2 mt-1"></i>
+                                <span>仔細查證，不輕信陌生訊息</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-2">
+                                <i class="fa-solid fa-circle-xmark text-danger me-2 mt-1"></i>
+                                <span>保護個人隱私，不隨意提供敏感資訊</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-2">
+                                <i class="fa-solid fa-circle-xmark text-danger me-2 mt-1"></i>
+                                <span>溝通使用平台，勿私下交易</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-2">
+                                <i class="fa-solid fa-circle-xmark text-danger me-2 mt-1"></i>
+                                <span>發現可疑，立即檢舉</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    
 
 
 
-    <!-- 選擇對話人列表視窗 -->
     <div id="chat-selector" class="position-fixed bottom-0 end-0 m-4">
         <div class="chat-header d-flex justify-content-center align-items-center"><strong>對話清單</strong></div>
         <ul class="list-group " id="chatList"></ul>
     </div>
 
-    <!-- 浮出聊天視窗容器 -->
     <div id="chatWindows"></div>
 
-    <!-- 右下角置頂按鈕 -->
     <button id="backToTop" class="btn btn-primary shadow">↑</button>
 
-    <!-- Footer -->
     <footer class="footer text-center mt-5">
         <div class="container">
             <p>快速連結：領養 / 商城 / 醫療回報 / 寵物救助</p>
@@ -164,7 +185,6 @@
             <p>地址：台中市南屯區公益路二段51號</p>
             <p>本站所有資訊來自開放平台與會員自行刊登，若有侵權請聯繫移除。</p>
         </div>
-        <!-- 中間選單 -->
         <ul class="navbar-nav mx-lg-auto text-center">
             <li class="nav-item"><a class="nav-link" href="#">關於我們</a></li>
             <li class="nav-item"><a class="nav-link" href="#">領養須知</a></li>
